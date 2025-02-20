@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jeu de Ping Pong en ligne pour deux joueurs.">
+    <meta name="keywords" content="Ping Pong, Jeu, Multijoueur">
+    <meta name="author" content="Votre Nom">
+    <title>Ping Pong 2</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="index.css"> <!-- Lien vers le fichier CSS externe -->
+</head>
+<body>
+    <div class="container">
+        <img src="back 3.avif" alt="Title" class="title">
+        <div class="background"></div>
+    </div>
+    
+    <style>
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 85px;
+    right: 70px;
+    }    
+    
+    .title {
+        width: 75px;
+        margin-bottom: -90px; /* Overlaps slightly */
+        top: 20px;  /* يتحرك لأسفل بمقدار 20 بكسل */
+    left: 30px; /* يتحرك لليمين بمقدار 30 بكسل */
+    }
+    
+    .background {
+        width: 10%;
+        height: 60px;
+        background-image: url('background.jpg');
+        background-size: cover;
+    }
+    </style>    
+    <!-- Menu Principal -->
+    <div class="menu">
+        <div class="name-input">          
+            <input id="player1Name" type="text" class="form-control mb-2" placeholder="Nom du Joueur 1" />
+            <input id="player2Name" type="text" class="form-control" placeholder="Nom du Joueur 2" />
+        </div>
+        <button id="startGame" class="btn btn-success">Commencer le Jeu</button>
+        <button id="instructions" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#instructionsModal">Instructions</button>
+        <button id="quitGame" class="btn btn-danger">Quitter</button>
+    </div>
+
+    <!-- Scoreboard -->
+    <div class="scoreboard" id="scoreboard" style="display: none;">
+        <h2></h2>
+        <div class="score">
+            <span id="displayPlayer1Name">Joueur 1</span> : <span id="player1Score">0</span>
+        </div>
+        <div class="score">
+            <span id="displayPlayer2Name">Joueur 2</span> : <span id="player2Score">0</span>
+        </div>
+    </div>
+    
+    <!-- Modal pour les instructions -->
+    <div class="modal fade" id="instructionsModal" tabindex="-1" aria-labelledby="instructionsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="instructionsModalLabel">Instructions</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Joueur 1</strong> : Utilisez les touches <kbd>Q</kbd> pour monter et <kbd>W</kbd> pour descendre.</p>
+                    <p><strong>Joueur 2</strong> : Utilisez les flèches <kbd>↑</kbd> pour monter et <kbd>↓</kbd> pour descendre.</p>
+                    <p>Votre objectif est d'éviter que la balle atteigne votre côté tout en essayant de marquer des points contre l'adversaire.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="index.js"></script> <!-- Lien vers le fichier JavaScript externe -->
+</body>
+</html>

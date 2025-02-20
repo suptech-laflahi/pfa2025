@@ -1,0 +1,205 @@
+/* Styles généraux */
+body {
+    background-image: url('back.jpg'); /* Image de fond */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Police fun pour enfants */
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* Menu principal */
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #ffcc00;
+    text-shadow: 3px 3px 0px #ff5733;
+}
+
+/* Input Style */
+input {
+    width: 250px;
+    padding: 12px;
+    margin: 10px;
+    border: 3px solid #ffcc00;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    text-align: center;
+    background-color: #fff3cd;
+    box-shadow: 0px 5px 0px #ff9f33;
+    transition: 0.3s;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0px 5px 0px #ff5733;
+}
+
+/* Style général des boutons */
+button {
+    background: linear-gradient(to bottom, #ff5733, #ffcc00);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    margin-top: 15px;
+    cursor: pointer;
+    font-size: 1.4rem;
+    font-weight: bold;
+    border-radius: 20px;
+    box-shadow: 0px 6px 0px #d9534f;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: linear-gradient(to bottom, #ffcc00, #ff5733);
+    box-shadow: 0px 6px 0px #a94442;
+}
+
+button:active {
+    transform: translateY(4px);
+    box-shadow: 0px 2px 0px #a94442;
+}
+
+/* Style spécifique pour le bouton Quitter */
+#quitGame {
+    width: 90px;
+    height: 90px;
+    background: radial-gradient(circle, #ff3333, #cc0000);
+    border-radius: 50%;
+    box-shadow: inset 0px 0px 5px 3px rgba(255, 255, 255, 0.4), 4px 4px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+#quitGame:hover {
+    background: radial-gradient(circle, #cc0000, #990000);
+    transform: scale(1.1);
+}
+
+#quitGame:active {
+    transform: scale(0.9);
+}
+
+/* Icône du bouton Quitter */
+#quitGame svg {
+    width: 40px;
+    fill: white;
+    filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.5));
+}
+
+/* Tableau des scores */
+.scoreboard {
+    position: absolute; /* Fixe le scoreboard en haut */
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: row; /* Alignement horizontal */
+    justify-content: space-between;
+    align-items: center;
+    width: 40%; /* Réduit la largeur */
+    height: auto;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.4));
+    border: 3px solid rgba(255, 255, 255, 0.8); /* Bordure plus fine */
+    border-radius: 15px; /* Bord arrondi */
+    padding: 10px 20px; /* Moins d'espace intérieur */
+    color: #fff;
+    font-size: 18px; /* Texte plus petit */
+    font-weight: bold;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Styles des scores */
+.score {
+    flex: 1; /* Permet d'occuper l'espace disponible */
+    text-align: center;
+}
+
+/* Place le joueur 1 à gauche */
+#displayPlayer1Name {
+    text-align: left;
+}
+
+/* Place le joueur 2 à droite */
+#displayPlayer2Name {
+    text-align: right;
+}
+
+/* Style pour les scores individuels */
+.score {
+    margin: 10px 0;
+    padding: 10px 15px;
+    width: 100%;
+    text-align: center;
+    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #ffeb3b;
+    font-size: 28px;
+    font-weight: bold;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Animation pour un effet dynamique */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.scoreboard {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Canvas (terrain de jeu) */
+canvas {
+    display: block;
+    margin: 20px auto;
+    margin-top: 15%;
+    background-color: black;
+    border: 3px solid white;
+    border-radius: 10px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    input {
+        width: 200px;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    button {
+        font-size: 1rem;
+        padding: 10px 15px;
+    }
+    #quitGame {
+        width: 70px;
+        height: 70px;
+    }
+    .scoreboard {
+        width: 280px;
+        font-size: 22px;
+    }
+    .score {
+        font-size: 24px;
+    }
+}
