@@ -22,8 +22,15 @@ document.getElementById("startGame").addEventListener("click", () => {
     document.getElementById("displayPlayer1Name").textContent = player1Name;
     document.getElementById("displayPlayer2Name").textContent = player2Name;
 
+    // Hide the "Play Online" button when the game starts
+    document.getElementById("play-online").style.display = "none"; 
+    document.getElementById("scoreboard").style.display = "none";
+
+    // Show the game menu and scoreboard
     document.querySelector(".menu").style.display = "none";
-    document.querySelector(".scoreboard").style.display = "";
+    document.querySelector(".scoreboard").style.display = "block";
+    document.querySelector(".background-image").style.display = "none"
+    document.querySelector(".Btn").style.display="none"
 
     canvas = document.createElement('canvas');
     document.body.appendChild(canvas);
@@ -31,7 +38,7 @@ document.getElementById("startGame").addEventListener("click", () => {
     canvas.height = 400;
     canvas.style.border = "5px solid white";
     canvas.style.borderRadius = "15px";
-    canvas.style.backgroundColor = "#006400";
+    canvas.style.backgroundColor = "#D2691E";
     ctx = canvas.getContext('2d');
 
     player1Y = canvas.height / 2 - paddleHeight / 2;
@@ -138,4 +145,19 @@ function endGame() {
     document.body.removeChild(canvas);
     document.querySelector(".menu").style.display = "flex";
     document.querySelector(".scoreboard").style.display = "none";
+    document.getElementById("play-online").style.display = "block";
+    document.querySelector(".Btn").style.display="block"
+    document.querySelector(".background-image").style.display = "block"
+
+}
+
+document.getElementById('play-online').addEventListener('click', function() {
+    window.location.href = 'sign.html'
+});
+
+function updateScore(newScore) {
+    const scoreboard = document.querySelector('.scoreboard');
+    scoreboard.textContent = newScore;
+    scoreboard.classList.add('score-change');
+    setTimeout(() => scoreboard.classList.remove('score-change'), 500);
 }

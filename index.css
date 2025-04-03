@@ -1,205 +1,281 @@
-/* Styles généraux */
+/* General body style */
 body {
-    background-image: url('back.jpg'); /* Image de fond */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    font-family: 'Comic Sans MS', cursive, sans-serif; /* Police fun pour enfants */
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+        
+            background-color: goldenrod;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 100vh; /* Ensure it takes at least the full viewport height */
+} 
+
+/* Play Online Button */
+.play-online-btn {
+    background-color: orangered; /* Bright coral color */
+    color:white; /* Text color */
+    font-size: 14px; /* Bigger font size for readability */
+    padding: 20px 50px; /* Spacious padding */
+    border: none;
+    border-radius: 39px; /* More rounded corners for a friendly, soft look */
+    cursor: pointer;
+    transition: all 0.2s ease; /* Smooth transition for hover effect */
+    position: absolute;
+    top: 65%; /* Position vertically centered */
+    left: 43%; /* Position horizontally centered */
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Fun font for kids */
 }
 
-/* Menu principal */
+/* Menu Section */
 .menu {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    margin-top: 20px;
 }
 
-h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    color: #ffcc00;
-    text-shadow: 3px 3px 0px #ff5733;
+.name-input {
+        position: relative;
+        top: 200px;  /* Moves down */
+        left: 0px; /* Moves right */
+        margin-bottom: 80px;
+        font-family: 'Comic Sans MS', cursive, sans-serif; /* Fun font for kids */
 }
 
-/* Input Style */
+/* Input Fields */
 input {
-    width: 250px;
-    padding: 12px;
-    margin: 10px;
-    border: 3px solid #ffcc00;
+    background-color: #FFF5E1; /* Soft yellow background */
+    border: 2px solid #FF6F61; /* Coral border */
     border-radius: 10px;
-    font-size: 1.2rem;
+    padding: 10px;
+    font-size: 18px;
+    margin: 5px;
+    width: 300px;
     text-align: center;
-    background-color: #fff3cd;
-    box-shadow: 0px 5px 0px #ff9f33;
-    transition: 0.3s;
 }
 
 input:focus {
+    border-color: #FF9A8B; /* Lighter coral on focus */
     outline: none;
-    box-shadow: 0px 5px 0px #ff5733;
 }
 
-/* Style général des boutons */
-button {
-    background: linear-gradient(to bottom, #ff5733, #ffcc00);
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    margin-top: 15px;
-    cursor: pointer;
-    font-size: 1.4rem;
-    font-weight: bold;
-    border-radius: 20px;
-    box-shadow: 0px 6px 0px #d9534f;
-    transition: 0.3s;
-}
+/* Game buttons */
+.button {
+    position: relative;
+    top: 130px;  
+    left: -55px; 
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    background: linear-gradient(30deg, rgb(255, 130, 0) 20%, rgb(255, 38, 0) 80%);
+    transition: all 0.3s ease-in-out 0s;
+    box-shadow: rgba(193, 244, 246, 0.698) 0px 0px 0px 0px;
+    animation: 1.2s cubic-bezier(0.8, 0, 0, 1) 0s infinite normal none running pulse;
+    align-items: center;
+    border: 0;
+  }
+  
+  
+  
+  
+  
+  
 
 button:hover {
-    background: linear-gradient(to bottom, #ffcc00, #ff5733);
-    box-shadow: 0px 6px 0px #a94442;
+    background-color: #FF9A8B; /* Lighter coral on hover */
+    transform: scale(1.30); /* Slight scale effect */
 }
 
 button:active {
-    transform: translateY(4px);
-    box-shadow: 0px 2px 0px #a94442;
+    background-color: #FF4C3B; /* Darker coral when clicked */
+    transform: scale(1); /* Reset size */
 }
 
-/* Style spécifique pour le bouton Quitter */
-#quitGame {
-    width: 90px;
-    height: 90px;
-    background: radial-gradient(circle, #ff3333, #cc0000);
-    border-radius: 50%;
-    box-shadow: inset 0px 0px 5px 3px rgba(255, 255, 255, 0.4), 4px 4px 10px rgba(0, 0, 0, 0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.3s;
-}
-
-#quitGame:hover {
-    background: radial-gradient(circle, #cc0000, #990000);
-    transform: scale(1.1);
-}
-
-#quitGame:active {
-    transform: scale(0.9);
-}
-
-/* Icône du bouton Quitter */
-#quitGame svg {
-    width: 40px;
-    fill: white;
-    filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.5));
-}
-
-/* Tableau des scores */
+/* Scoreboard */
 .scoreboard {
-    position: absolute; /* Fixe le scoreboard en haut */
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: row; /* Alignement horizontal */
-    justify-content: space-between;
-    align-items: center;
-    width: 40%; /* Réduit la largeur */
-    height: auto;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.4));
-    border: 3px solid rgba(255, 255, 255, 0.8); /* Bordure plus fine */
-    border-radius: 15px; /* Bord arrondi */
-    padding: 10px 20px; /* Moins d'espace intérieur */
-    color: #fff;
-    font-size: 18px; /* Texte plus petit */
-    font-weight: bold;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(5px);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  position: relative;
+  top: 1px;
+  left: 5px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #FF6F61;
+  text-shadow: 0 0 5px rgba(255, 111, 97, 0.7), 
+               0 0 10px rgba(255, 111, 97, 0.5);
+  padding: 10px 20px;
+  background: rgba(20, 20, 20, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 111, 97, 0.3);
+  transform: perspective(500px) rotateX(5deg);
 }
 
-/* Styles des scores */
+.scoreboard:hover {
+  transform: perspective(500px) rotateX(5deg) scale(1.05);
+  box-shadow: 0 6px 20px rgba(255, 111, 97, 0.4);
+  text-shadow: 0 0 8px rgba(255, 111, 97, 0.9), 
+               0 0 15px rgba(255, 111, 97, 0.7);
+}
+
+/* Animation pour les changements de score */
+@keyframes scoreChange {
+  0% { transform: perspective(500px) rotateX(5deg) scale(1); }
+  50% { transform: perspective(500px) rotateX(5deg) scale(1.2); }
+  100% { transform: perspective(500px) rotateX(5deg) scale(1); }
+}
+
+.score-change {
+  animation: scoreChange 0.5s ease-out;
+}
+
 .score {
-    flex: 1; /* Permet d'occuper l'espace disponible */
-    text-align: center;
-}
-
-/* Place le joueur 1 à gauche */
-#displayPlayer1Name {
-    text-align: left;
-}
-
-/* Place le joueur 2 à droite */
-#displayPlayer2Name {
-    text-align: right;
-}
-
-/* Style pour les scores individuels */
-.score {
-    margin: 10px 0;
-    padding: 10px 15px;
-    width: 100%;
-    text-align: center;
-    border-radius: 15px;
-    background: rgba(0, 0, 0, 0.5);
-    color: #ffeb3b;
     font-size: 28px;
-    font-weight: bold;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    margin: 10px;
 }
 
-/* Animation pour un effet dynamique */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
-.scoreboard {
-    animation: fadeIn 0.5s ease-in-out;
-}
 
-/* Canvas (terrain de jeu) */
-canvas {
-    display: block;
+#displayPlayer1Name, #displayPlayer2Name {
+    font-family: "Brush Script MT", cursive;
+    font-size: 24px;}
+
+/* Game Canvas */
+canvas { 
+    border: 5px solid #FF6F61; /* Bright border */
+    border-radius: 15px; /* Rounded corners */
+    background-color: #81D4FA; /* Light blue background */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2); /* Soft shadow */
     margin: 20px auto;
-    margin-top: 15%;
-    background-color: black;
-    border: 3px solid white;
+    display: block;
+}
+
+/* Modal Styling */
+.modal-content {
+    background-color: #FFEB3B; /* Soft yellow background for modal */
     border-radius: 10px;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-    input {
-        width: 200px;
-    }
-    h1 {
-        font-size: 2rem;
-    }
-    button {
-        font-size: 1rem;
-        padding: 10px 15px;
-    }
-    #quitGame {
-        width: 70px;
-        height: 70px;
-    }
-    .scoreboard {
-        width: 280px;
-        font-size: 22px;
-    }
-    .score {
-        font-size: 24px;
-    }
+.modal-header {
+    background-color: #FF6F61;
+    color: white;
+    font-size: 24px;
+    padding: 15px;
+    text-align: center;
 }
+
+.modal-body {
+    font-size: 18px;
+    color: #333;
+}
+
+.modal-footer button {
+    background-color: #FF6F61;
+    color: white;
+    border-radius: 20px;
+    padding: 10px 20px;
+    border: none;
+}
+
+.modal-footer button:hover {
+    background-color: #FF9A8B;
+}
+
+.modal-footer button:active {
+    background-color: #FF4C3B;
+}
+
+/* Animation for the whole page */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+body {
+    animation: fadeIn 2s ease-in;
+}
+
+/* From Uiverse.io by vinodjangid07 */ 
+.Btn {
+    position: absolute; 
+    top: 60px;
+    left: 670px;
+    align-items: center;
+    justify-content: flex-start;
+    width: 70px;
+    height: 70px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition-duration: .3s;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+    background-color: rgb(255, 65, 65);
+  }
+  
+  /* plus sign */
+  .sign {
+    width: 100%;
+    transition-duration: .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .sign svg {
+    width: 17px;
+  }
+  
+  .sign svg path {
+    fill: white;
+  }
+  /* text */
+  .text {
+    position: absolute;
+    top: 25%;
+    right: 0%;
+    width: 0%;
+    opacity: 0;
+    color: white;
+    font-size: 1.2em;
+    font-weight: 600;
+    transition-duration: .3s;
+  }
+  /* hover effect on button width */
+  .Btn:hover {
+    width: 125px;
+    border-radius: 40px;
+    transition-duration: .3s;
+  }
+  
+  .Btn:hover .sign {
+    width: 30%;
+    transition-duration: .3s;
+    padding-left: 20px;
+  }
+  /* hover effect button's text */
+  .Btn:hover .text {
+    opacity: 1;
+    width: 70%;
+    transition-duration: .3s;
+    padding-right: 10px;
+  }
+  /* button click effect*/
+  .Btn:active {
+    transform: translate(2px ,2px);
+  }
+  
+  .background-image {
+    position: absolute;
+    top: 11%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10%;
+    max-width: 800px; /* Adjust size */
+    opacity: 0.8; /* Adjust transparency */
+    z-index: 1; /* Ensures it’s on top */
+}
+

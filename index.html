@@ -11,45 +11,32 @@
     <link rel="stylesheet" href="index.css"> <!-- Lien vers le fichier CSS externe -->
 </head>
 <body>
-    <div class="container">
-        <img src="back 3.avif" alt="Title" class="title">
-        <div class="background"></div>
-    </div>
-    
-    <style>
-    .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        position: absolute;
-        top: 85px;
-    right: 70px;
-    }    
-    
-    .title {
-        width: 75px;
-        margin-bottom: -90px; /* Overlaps slightly */
-        top: 20px;  /* يتحرك لأسفل بمقدار 20 بكسل */
-    left: 30px; /* يتحرك لليمين بمقدار 30 بكسل */
-    }
-    
-    .background {
-        width: 10%;
-        height: 60px;
-        background-image: url('background.jpg');
-        background-size: cover;
-    }
-    </style>    
     <!-- Menu Principal -->
+    <button id="play-online" type="button" class="play-online-btn">PLAY ONLINE</button> <!-- Added class -->
     <div class="menu">
         <div class="name-input">          
-            <input id="player1Name" type="text" class="form-control mb-2" placeholder="Nom du Joueur 1" />
-            <input id="player2Name" type="text" class="form-control" placeholder="Nom du Joueur 2" />
+            <input id="player1Name" type="text" class="form-control mb-2" placeholder=" player 1" />
+            <input id="player2Name" type="text" class="form-control" placeholder="player 2" />
         </div>
-        <button id="startGame" class="btn btn-success">Commencer le Jeu</button>
-        <button id="instructions" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#instructionsModal">Instructions</button>
-        <button id="quitGame" class="btn btn-danger">Quitter</button>
-    </div>
+        <button id = "startGame"class="button">
+            <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="26px"><path d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z" fill="currentColor"></path></svg>
+          </button> 
+     </div>     
+<!-- From Uiverse.io by vinodjangid07 --> 
+<button class="Btn">
+  
+    <div class="sign"><svg viewBox="0 0 512 512"><path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"></path></svg></div>
+    
+    <div class="text">EXIT</div>
+  </button>
+
+
+  <img src="download.png" class="background-image">
+
+  
+  
+  
+  
 
     <!-- Scoreboard -->
     <div class="scoreboard" id="scoreboard" style="display: none;">
@@ -62,25 +49,8 @@
         </div>
     </div>
     
-    <!-- Modal pour les instructions -->
-    <div class="modal fade" id="instructionsModal" tabindex="-1" aria-labelledby="instructionsModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header bg-primary text-white">
-                    <h5 class="modal-title" id="instructionsModalLabel">Instructions</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p><strong>Joueur 1</strong> : Utilisez les touches <kbd>Q</kbd> pour monter et <kbd>W</kbd> pour descendre.</p>
-                    <p><strong>Joueur 2</strong> : Utilisez les flèches <kbd>↑</kbd> pour monter et <kbd>↓</kbd> pour descendre.</p>
-                    <p>Votre objectif est d'éviter que la balle atteigne votre côté tout en essayant de marquer des points contre l'adversaire.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-                </div>
-            </div>
-        </div>
-    </div>
+
+    
     
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
